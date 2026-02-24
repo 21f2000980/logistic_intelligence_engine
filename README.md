@@ -27,44 +27,23 @@ This simulates a production-style data warehouse pipeline.
 ### High-Level Flow
 
 ┌─────────────────────────────┐
-                │   BigQuery Public Dataset   │
-                │  (Orders + Weather Data)    │
-                └───────────────┬─────────────┘
-                                │
-                                ▼
-                ┌─────────────────────────────┐
-                │        Bronze Layer         │
-                │  Raw copy of source tables  │
-                └───────────────┬─────────────┘
-                                │
-                                ▼
-                ┌─────────────────────────────┐
-                │        Silver Layer         │
-                │  Cleaned + Feature Engineered│
-                │  (delay_days, order_date)   │
-                └───────────────┬─────────────┘
-                                │
-                                ▼
-                ┌─────────────────────────────┐
-                │         Gold Layer          │
-                │ Aggregated Analytics Table  │
-                │ Partitioned by order_date   │
-                └───────────────┬─────────────┘
-                                │
-                                ▼
-                ┌─────────────────────────────┐
-                │       BigQuery ML Model     │
-                │   Delay Prediction Model    │
-                └───────────────┬─────────────┘
-                                │
-                                ▼
-                ┌─────────────────────────────┐
-                │     Streamlit Dashboard     │
-                │  KPI + Interactive SQL UI   │
-                └─────────────────────────────┘
+```
+flowchart TD
 
+    A[BigQuery Public Dataset<br/>(Orders + Weather Data)]
+    B[Bronze Layer<br/>Raw copy of source tables]
+    C[Silver Layer<br/>Cleaned + Feature Engineered<br/>(delay_days, order_date)]
+    D[Gold Layer<br/>Aggregated Analytics Table<br/>Partitioned by order_date]
+    E[BigQuery ML Model<br/>Delay Prediction Model]
+    F[Streamlit Dashboard<br/>KPI + Interactive SQL UI]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    E --> F
 ---
-
+```
 ## 🥉 Bronze Layer
 
 - Raw ingestion from public BigQuery datasets
