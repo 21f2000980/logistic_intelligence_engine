@@ -26,7 +26,7 @@ This simulates a production-style data warehouse pipeline.
 
 ### High-Level Flow
 
-┌─────────────────────────────┐
+
 
 
 ```mermaid
