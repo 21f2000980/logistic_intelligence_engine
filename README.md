@@ -27,6 +27,7 @@ This simulates a production-style data warehouse pipeline.
 ### High-Level Flow
 
 ┌─────────────────────────────┐
+
 ```
 flowchart TD
 
@@ -42,6 +43,7 @@ flowchart TD
     C --> D
     D --> E
     E --> F
+
 ```
 ## 🥉 Bronze Layer
 
