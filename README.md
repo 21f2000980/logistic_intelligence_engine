@@ -29,7 +29,7 @@ This simulates a production-style data warehouse pipeline.
 ┌─────────────────────────────┐
 
 
-```mermain
+```mermaid
 flowchart TD
 
     A["BigQuery Public Dataset<br/>(Orders + Weather Data)"]
