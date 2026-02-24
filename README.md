@@ -30,9 +30,9 @@ This simulates a production-style data warehouse pipeline.
 ```
 flowchart TD
 
-    A[BigQuery Public Dataset<br/>(Orders + Weather Data)]
+    A["BigQuery Public Dataset<br/>(Orders + Weather Data)"]
     B[Bronze Layer<br/>Raw copy of source tables]
-    C[Silver Layer<br/>Cleaned + Feature Engineered<br/>(delay_days, order_date)]
+    C["Silver Layer<br/>Cleaned + Feature Engineered<br/>(delay_days, order_date)"]
     D[Gold Layer<br/>Aggregated Analytics Table<br/>Partitioned by order_date]
     E[BigQuery ML Model<br/>Delay Prediction Model]
     F[Streamlit Dashboard<br/>KPI + Interactive SQL UI]
@@ -42,7 +42,6 @@ flowchart TD
     C --> D
     D --> E
     E --> F
----
 ```
 ## 🥉 Bronze Layer
 
